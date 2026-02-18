@@ -1,0 +1,19 @@
+# terraform
+name              = "rds"
+type              = "terraform_module"
+terraform_version = "1.11.3"
+# Provisions an RDS PostgreSQL instance for gitea
+
+[public_repo]
+repo      = "https://github.com/nuonco/gitea-nuon-config"
+directory = "components/1-rds"
+branch    = "main"
+
+[vars]
+region                 = "{{ .nuon.install_stack.outputs.region }}"
+install_id             = "{{ .nuon.install.id }}"
+vpc_id                 = "{{ .nuon.install.sandbox.outputs.vpc.id }}"
+private_subnet_ids     = "{{ index .nuon.install.sandbox.outputs.vpc.private_subnet_ids 0 }},{{ index .nuon.install.sandbox.outputs.vpc.private_subnet_ids 1 }},{{ index .nuon.install.sandbox.outputs.vpc.private_subnet_ids 2 }}"
+node_security_group_id = "{{ .nuon.install.sandbox.outputs.cluster.node_security_group_id }}"
+db_name                = "{{ .nuon.inputs.inputs.db_name }}"
+instance_class         = "db.t3.medium"

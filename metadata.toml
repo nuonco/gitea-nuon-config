@@ -1,0 +1,4 @@
+# metadata
+version      = "v2"
+description  = "Gitea Helm chart for Kubernetes"
+display_name = "gitea"

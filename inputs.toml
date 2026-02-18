@@ -1,0 +1,43 @@
+# inputs
+
+# --- Groups ---
+
+[[group]]
+name         = "application"
+description  = "Core application settings"
+display_name = "Application"
+
+[[group]]
+name         = "networking"
+description  = "Domain and ingress settings"
+display_name = "Networking"
+
+# --- Inputs ---
+
+[[input]]
+name         = "subdomain"
+description  = "Subdomain for gitea (e.g. 'app' for app.customer.nuon.run)"
+default      = "gitea"
+display_name = "Subdomain"
+group        = "networking"
+
+[[input]]
+name         = "admin_password"
+description  = "Initial admin password for gitea"
+default      = ""
+display_name = "Admin Password"
+group        = "application"
+sensitive    = true
+required     = true
+
+[[group]]
+name         = "database"
+description  = "Database configuration"
+display_name = "Database"
+
+[[input]]
+name         = "db_name"
+description  = "Database name for gitea"
+default      = "gitea"
+display_name = "Database Name"
+group        = "database"

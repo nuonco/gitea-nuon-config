@@ -1,0 +1,14 @@
+# helm
+name           = "gitea"
+type           = "helm_chart"
+chart_name     = "gitea"
+namespace      = "gitea"
+storage_driver = "configmap"
+dependencies   = ["rds"]
+
+[helm_repo]
+repo_url = "https://dl.gitea.com/charts"
+chart    = "gitea"
+
+[[values_file]]
+contents = "./values/gitea/values.yaml"
