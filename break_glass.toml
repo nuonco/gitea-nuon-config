@@ -1,0 +1,8 @@
+[[role]]
+name                 = "{{.nuon.install.id}}-break-glass"
+description          = "Break-glass role for emergency access"
+display_name         = "Break Glass"
+permissions_boundary = ""
+
+[[role.policies]]
+managed_policy_name = "AdministratorAccess"

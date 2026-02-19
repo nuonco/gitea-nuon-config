@@ -1,9 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git remote add:*)",
-      "Bash(git remote:*)",
-      "Bash(git push:*)"
+      "Bash(git -C /Users/nuonuser/gitea-nuon-config status)",
+      "Bash(git fetch:*)",
+      "Bash(git reset:*)"
     ]
   }
 }
